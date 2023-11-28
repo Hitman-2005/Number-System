@@ -36,15 +36,10 @@ class Binary():
     def _converter(self):
         exp = 0
         _sum = 0
-        for n in str(self.raw):
-            if not "0" in n and not "1" in n:
-                pass
-            else:
-                while self.raw != 0:
-                    _sum = _sum + ((self.raw % 10) * (2 ** exp))
-                    self.raw = self.raw // 10
-                    exp += 1
-                break
+        while self.raw != 0:
+            _sum = _sum + ((self.raw % 10) * (2 ** exp))
+            self.raw = self.raw // 10
+            exp += 1
         return _sum
 
     def _decimal(self): # -> Issue: Can input integers other than 0 and 1
@@ -186,29 +181,48 @@ class Hexa:
 
     def _converter(self):
         result = []
-        string = ""
         exp = 0
         _sum = 0
-        while int(self.raw) != 0:
-            _sum = _sum + ((int(self.raw) % 10) * (16 ** exp))
-            result.append(_sum)
-            self.raw = int(self.raw) // 10
+        for item in self.raw:
+            for i in hexa_dict:
+                if item == hexa_dict[i]:
+                    item = i
+            item = int(item)
+            result.append(item)
+        for x in result[::-1]:
+            _sum = _sum + (x * (16 ** exp))
             exp += 1
-        for r in result:
-            for x in hexa_dict:
-                if r == hexa_dict[x]:
-                    r = x
-            result.append(r)
+        return _sum
     
     def _binary(self):
-        pass
+        value = h._converter()
+        string = ""
+        result = []
+        
+        while value > 0:
+            result.append(value % 2)
+            value = value // 2
+        for i in result:
+            string += str(i)
+        final_result = f"Binary: {string[::-1]}"
+        return final_result
 
     def _decimal(self):
         final_result = f"Decimal: {h._converter()}"
         return final_result
     
     def _octal(self):
-        pass
+        value = h._converter()
+        string = ""
+        result = []
+        
+        while value > 0:
+            result.append(value % 8)
+            value = value // 8
+        for i in result:
+            string += str(i)
+        final_result = f"Octal: {string[::-1]}"
+        return final_result
 
 d = Decimal()
 b = Binary()
