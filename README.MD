@@ -10,7 +10,6 @@
 ___
 
 ### [ TODO ]
-    [4] Hexadecimal Conversion (Haven't implemented)
-
+    To make user input valid for 0 & 1 for binary conversion
 ___
 Made by Hitman-2005 (Moirangthem Henthoiba)
