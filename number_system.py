@@ -17,7 +17,7 @@
     # binary -> other [o] (Forgot the time)
     # decimal -> other [o] (Forgot the time)
     # octal -> other [o] 26/11/2023 (9:35 AM)
-    # hexadecimal -> other [x]
+    # hexadecimal -> other [0] 29/11/2023 (12:46 AM)
 
 hexa_dict = {
     # Making a dictionary just to convert a number to alphabet which is absolutely neccessary for converting to hexadecimal number system
