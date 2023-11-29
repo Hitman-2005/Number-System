@@ -259,6 +259,8 @@ if __name__ == "__main__":
             print(b._octal())
         elif option == "3":
             print(b._hexa())
+        else:
+            print(f"Wrong Option: {option}")
 
     elif _option == "2":
         number = int(input("Enter a decimal number: "))
@@ -277,7 +279,9 @@ if __name__ == "__main__":
             print(d._octal())
         elif option == "3":
             print(d._hexa())
-    
+        else:
+            print(f"Wrong Option: {option}")
+
     elif _option == "3":
         number = int(input("Enter a Octal number: "))
         o._value(number)
@@ -295,6 +299,8 @@ if __name__ == "__main__":
             print(o._decimal())
         elif option == "3":
             print(o._hexa())
+        else:
+            print(f"Wrong Option: {option}")
 
     elif _option == "4":
         number = input("Enter a Hexa number: ")
@@ -313,3 +319,8 @@ if __name__ == "__main__":
             print(h._decimal())
         elif option == "3":
             print(h._octal())
+        else:
+            print(f"Wrong Option: {option}")   
+    else:
+        print(f"Wrong Option: {_option}")
+        
